@@ -118,6 +118,26 @@ module.exports = class extends Generator {
         this.destinationPath(`packages/service-${packageName}/Dockerfile-development`),
       )
 
+      this.fs.copy(
+        this.templatePath('microservice/AWS/devops_script.sh'),
+        this.destinationPath(`packages/service-${packageName}/AWS/devops_script.sh`),
+      )
+            
+      this.fs.copy(
+        this.templatePath('microservice/AWS/ForUpload'),
+        this.destinationPath(`packages/service-${packageName}/AWS/ForUpload`),
+      )
+
+      this.fs.copy(
+        this.templatePath('microservice/AWS/README.md'),
+        this.destinationPath(`packages/service-${packageName}/AWS/README.md`),
+      )
+
+      this.fs.copy(
+        this.templatePath('microservice/AWS/repo_access.json'),
+        this.destinationPath(`packages/service-${packageName}/AWS/repo_access.json`),
+      )
+
       this.fs.copyTpl(
         this.templatePath('microservice/AWS/Dockerrun.aws.json'),
         this.destinationPath(`packages/service-${packageName}/AWS/Dockerrun.aws.json`),
